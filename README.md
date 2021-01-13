@@ -21,3 +21,6 @@
 your spoon and you hit a block, 
   Newton's third law acts on the player and the 
   force of your impact launches you backwards!
+![Comically Large Spoon in hand](https://github.com/sebastianmorgan951/ComicallyLargeSpoonMod/blob/main/Pictures/SpoonFrontView.png)
+![Crafting Recipe for an Empty Mound](https://github.com/sebastianmorgan951/ComicallyLargeSpoonMod/blob/main/Pictures/EmptyMoundCrafting.png)
+![Crafting Recipe for the Comically Large Spoon](https://github.com/sebastianmorgan951/ComicallyLargeSpoonMod/blob/main/Pictures/SpoonCrafting.png)
