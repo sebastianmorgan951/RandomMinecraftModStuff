@@ -10,7 +10,7 @@
     sword to replace the one the mound is holding,
     then the mound will drop the exact sword you gave
     it earlier.  
-- ![Mounds displayed from front view](relative/path/to/pics/MoundsDisplayed2.png?raw=true "Title)
+![Mounds displayed from front view](relative/path/to/pics/MoundsDisplayed2.png?raw=true "Title)
   
 *Comically Large Spoon*  
 - Added a high damage, low attack-speed weapon which
