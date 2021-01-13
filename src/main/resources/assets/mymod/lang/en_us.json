@@ -12,6 +12,8 @@
 
   "itemGroup.MyModTab": "Spoon Mod Additions",
 
+  "enchantment.mymod.heaviness": "Heaviness",
+
   "sounds.mymod.bonk": "BONK!",
   "sounds.mymod.spoon_woosh": "woosh",
   "sounds.mymod.spoon_ground_smash": "BOINGGGG!"

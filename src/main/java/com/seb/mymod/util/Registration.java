@@ -2,6 +2,7 @@ package com.seb.mymod.util;
 
 import com.seb.mymod.MyMod;
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Effect;
@@ -32,6 +33,9 @@ public class Registration {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(ForgeRegistries.SOUND_EVENTS,MyMod.MOD_ID);
 
+    public static final DeferredRegister<Enchantment> ENCHANTMENTS =
+            DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, MyMod.MOD_ID);
+
     //This is how we would register something else, whether its a potion or
     //a sound or something
     /*public static final DeferredRegister<> WHATEVER =
@@ -48,5 +52,6 @@ public class Registration {
         EFFECTS.register(eventBus);
         TILE_ENTITY_TYPES.register(eventBus);
         SOUND_EVENTS.register(eventBus);
+        ENCHANTMENTS.register(eventBus);
     }
 }

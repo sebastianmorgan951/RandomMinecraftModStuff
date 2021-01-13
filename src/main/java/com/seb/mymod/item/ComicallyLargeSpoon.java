@@ -1,6 +1,9 @@
 package com.seb.mymod.item;
 
+import com.seb.mymod.enchantment.ModEnchantments;
 import com.seb.mymod.sound.ModSoundEvents;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,6 +15,7 @@ import net.minecraftforge.common.extensions.IForgeItem;
 
 public class ComicallyLargeSpoon extends SwordItem {
 
+    public static final float[] ATTACK_SPEEDS = {-3.5f,-3.55f,-3.58f,-3.6f};
     private boolean hitSomething;
 
     public ComicallyLargeSpoon(IItemTier tier, int attackDamageIn,
@@ -35,12 +39,14 @@ public class ComicallyLargeSpoon extends SwordItem {
 
     @Override
     public boolean onBlockStartBreak(ItemStack itemstack, BlockPos pos, PlayerEntity player) {
+        int heavinessLevel = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.HEAVINESS.get(),
+                itemstack);
         Vector3d lookVec = player.getLookVec();
         Vector3d currMotion = player.getMotion();
         player.playSound(ModSoundEvents.SPOON_GROUND_SMASH.get(),1f,1f);
-        player.setMotion(currMotion.getX()+(-1*lookVec.getX()),
-                -1*lookVec.getY(),
-                currMotion.getZ()+(-1* lookVec.getZ()));
+        player.setMotion(currMotion.getX()+((-1-heavinessLevel)*lookVec.getX()),
+                (-1-heavinessLevel)*lookVec.getY(),
+                currMotion.getZ()+((-1-heavinessLevel)* lookVec.getZ()));
         hitSomething = true;
         return false;
     }

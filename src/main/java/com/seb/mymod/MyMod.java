@@ -1,6 +1,7 @@
 package com.seb.mymod;
 
 import com.seb.mymod.block.ModBlocks;
+import com.seb.mymod.enchantment.ModEnchantments;
 import com.seb.mymod.item.ModItems;
 import com.seb.mymod.sound.ModSoundEvents;
 import com.seb.mymod.tileentity.ModTileEntities;
@@ -73,6 +74,7 @@ public class MyMod
         ModBlocks.register();
         ModTileEntities.register();
         ModSoundEvents.register();
+        ModEnchantments.register();
         /*ModContainers.register();*/
 
     }
