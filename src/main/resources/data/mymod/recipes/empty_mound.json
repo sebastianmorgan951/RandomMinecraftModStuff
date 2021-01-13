@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "###",
+    "+c+"
+  ],
+  "key": {
+    "#":
+    {
+      "tag": "minecraft:logs"
+    },
+    "+":
+    {
+      "item": "minecraft:mossy_cobblestone"
+    },
+    "c":
+    {
+      "item": "minecraft:chest"
+    }
+  },
+  "result":
+  {
+    "item": "mymod:empty_mound"
+  }
+}

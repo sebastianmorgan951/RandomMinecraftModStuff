@@ -4,7 +4,7 @@ import com.seb.mymod.block.ModBlocks;
 import net.minecraft.block.Block;
 
 public enum OreType {
-    COPPER(ModBlocks.COPPER_ORE.get(),8,16,60);
+    SPOON(ModBlocks.COMICALLY_LARGE_SPOON_MOUND.get(),1,12,16);
 
     private final Block block;
     private final int maxVeinSize;

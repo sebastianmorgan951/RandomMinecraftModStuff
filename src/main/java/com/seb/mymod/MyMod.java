@@ -1,10 +1,9 @@
 package com.seb.mymod;
 
 import com.seb.mymod.block.ModBlocks;
-import com.seb.mymod.events.ModEvents;
 import com.seb.mymod.item.ModItems;
+import com.seb.mymod.sound.ModSoundEvents;
 import com.seb.mymod.tileentity.ModTileEntities;
-import com.seb.mymod.util.Config;
 import com.seb.mymod.util.Registration;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -35,7 +34,7 @@ public class MyMod
     public static final ItemGroup CREATE_TAB = new ItemGroup("MyModTab") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ModItems.COPPER_WIRE.get());
+            return new ItemStack(ModItems.COMICALLY_LARGE_SPOON.get());
         }
     };
 
@@ -52,8 +51,6 @@ public class MyMod
 
         /* Forge has different stages for setting up certain processes. We call
         * all of this to set up our mod loading process in the correct order! */
-        // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
         // Inter-mod communication
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
@@ -63,31 +60,8 @@ public class MyMod
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
-        Config.loadConfigFile(Config.CLIENT_CONFIG, FMLPaths.CONFIGDIR.get()
-                .resolve("mymod-client.toml").toString());
-        Config.loadConfigFile(Config.SERVER_CONFIG, FMLPaths.CONFIGDIR.get()
-                .resolve("mymod-server.toml").toString());
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-    }
-
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        registerConfigs();
-        loadConfigs();
-    }
-
-    private void registerConfigs(){
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.CLIENT_CONFIG);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_CONFIG);
-    }
-
-    private void loadConfigs(){
-        Config.loadConfigFile(Config.CLIENT_CONFIG, FMLPaths.CONFIGDIR.get()
-                .resolve("mymod-client.toml").toString());
-        Config.loadConfigFile(Config.SERVER_CONFIG, FMLPaths.CONFIGDIR.get()
-                .resolve("mymod-server.toml").toString());
     }
 
     private void registerModAdditions(){
@@ -98,9 +72,8 @@ public class MyMod
         ModItems.register();
         ModBlocks.register();
         ModTileEntities.register();
+        ModSoundEvents.register();
         /*ModContainers.register();*/
-
-        MinecraftForge.EVENT_BUS.register(new ModEvents());
 
     }
 

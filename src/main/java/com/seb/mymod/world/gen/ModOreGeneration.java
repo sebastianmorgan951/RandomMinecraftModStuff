@@ -29,34 +29,6 @@ import java.util.function.Supplier;
 public class ModOreGeneration {
 
     @SubscribeEvent
-    public static void generateMounds(FMLLoadCompleteEvent event){
-        for(NonOreRandomlyPlacedType block : NonOreRandomlyPlacedType.values()){
-            OreFeatureConfig moundFeatureConfig = new OreFeatureConfig(OreFeatureConfig
-                    .FillerBlockType.BASE_STONE_OVERWORLD, block.getBlock().getDefaultState(),
-                    block.getMaxVeinSize());
-
-            ConfiguredPlacement placementHeight = Placement.DEPTH_AVERAGE.configure(
-                    new DepthAverageConfig(block.getMinHeight(),block.getMaxHeight()));
-
-            Registry.register(WorldGenRegistries.CONFIGURED_FEATURE,
-                    block.getBlock().getRegistryName(),
-                    Feature.ORE.withConfiguration(moundFeatureConfig)
-                            .withPlacement(placementHeight).square()
-                            .func_242731_b(block.getMaxVeinSize()));
-
-            for(Biome biome : ForgeRegistries.BIOMES) {
-                for (Structure structure : ForgeRegistries.STRUCTURE_FEATURES) {
-                    if (structure.getStructure().equals(StructureFeatures.MINESHAFT)) {
-                        addFeatureToBiome(biome, GenerationStage.Decoration.UNDERGROUND_STRUCTURES,
-                                WorldGenRegistries.CONFIGURED_FEATURE.getOrDefault(
-                                        block.getBlock().getRegistryName()));
-                    }
-                }
-            }
-        }
-    }
-
-    @SubscribeEvent
     public static void generateOres(FMLLoadCompleteEvent event){
         for(OreType ore : OreType.values()){
             /* The filler block tells the game what to generate in the non-ore parts of
@@ -80,7 +52,6 @@ public class ModOreGeneration {
                     addFeatureToBiome(biome,GenerationStage.Decoration.UNDERGROUND_ORES,
                             WorldGenRegistries.CONFIGURED_FEATURE.getOrDefault(
                                     ore.getBlock().getRegistryName()));
-                    System.out.println("Here from " + biome.toString());
                 }
             }
         }

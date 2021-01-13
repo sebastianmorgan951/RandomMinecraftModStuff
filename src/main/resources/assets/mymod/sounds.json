@@ -1,0 +1,17 @@
+{
+  "bonk": {
+    "category": "blocks",
+    "subtitle": "mymod.bonk",
+    "sounds": [ "mymod:bonk" ]
+  },
+  "spoon_woosh": {
+    "category": "blocks",
+    "subtitle": "mymod.spoon_woosh",
+    "sounds": [ "mymod:spoon_woosh" ]
+  },
+  "spoon_ground_smash": {
+    "category": "blocks",
+    "subtitle": "mymod.spoon_ground_smash",
+    "sounds": [ "mymod:spoon_ground_smash" ]
+  }
+}

@@ -1,32 +1,20 @@
 {
-  "item.mymod.copper_ingot": "Copper Ingot",
-  "block.mymod.copper_block": "Copper Block",
   "block.mymod.empty_mound": "Empty Mound",
-  "block.mymod.copper_sword_mound": "Copper Sword Mound",
   "block.mymod.diamond_sword_mound": "Diamond Sword Mound",
   "block.mymod.wooden_sword_mound": "Wooden Sword Mound",
   "block.mymod.golden_sword_mound": "Golden Sword Mound",
   "block.mymod.stone_sword_mound": "Stone Sword Mound",
   "block.mymod.iron_sword_mound": "Iron Sword Mound",
-  "block.mymod.geisel_library": "Geisel Library",
   "block.mymod.netherite_sword_mound": "Netherite Sword Mound",
   "block.mymod.comically_large_spoon_mound": "Comically Large Spoon Mound",
-  "item.mymod.copper_wire": "Copper Wire",
-  "block.mymod.copper_ore": "Copper Ore",
-  "item.mymod.coppered_apple": "Coppered Apple",
 
-  "item.mymod.copper_shovel": "Copper Shovel",
-  "item.mymod.copper_sword": "Copper Sword",
   "item.mymod.comically_large_spoon": "Comically Large Spoon",
-  "item.mymod.copper_axe": "Copper Axe",
-  "item.mymod.copper_hoe": "Copper Hoe",
-  "item.mymod.copper_pickaxe": "Copper Pickaxe",
 
-  "item.mymod.copper_helmet": "Copper Helmet",
-  "item.mymod.copper_chestplate": "Copper Chestplate",
-  "item.mymod.copper_leggings": "Copper Leggings",
-  "item.mymod.copper_boots": "Copper Boots",
+  "itemGroup.MyModTab": "Spoon Mod Additions",
 
-  "itemGroup.MyModTab": "Mod Stuff"
+  "sounds.mymod.bonk": "BONK!",
+  "sounds.mymod.spoon_woosh": "woosh",
+  "sounds.mymod.spoon_ground_smash": "BOINGGGG!"
+
 
 }

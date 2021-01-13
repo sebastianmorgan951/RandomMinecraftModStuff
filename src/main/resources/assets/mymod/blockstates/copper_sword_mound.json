@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": {"model": "mymod:block/copper_sword_mound"},
-    "facing=east": {"model": "mymod:block/copper_sword_mound", "y": 90},
-    "facing=south": {"model": "mymod:block/copper_sword_mound", "y": 180},
-    "facing=west": {"model": "mymod:block/copper_sword_mound", "y": 270}
-  }
-}

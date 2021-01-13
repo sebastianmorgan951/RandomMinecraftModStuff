@@ -636,8 +636,6 @@ public class FullMound extends EmptyMound{
 
     public static class SwordMound extends FullMound{
 
-        public static final Item PERFECT_STONE_MOUND_DROP = Items.STONE_SWORD.getItem();
-
         @Override
         public TileEntity createTileEntity(BlockState state, IBlockReader world){
             return new MoundTile();
@@ -650,6 +648,12 @@ public class FullMound extends EmptyMound{
 
         public SwordMound(Properties properties){
             super(properties);
+        }
+
+        @Override
+        public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+            dropItem(worldIn,player,pos);
+            super.onBlockHarvested(worldIn,pos,state,player);
         }
 
         @SuppressWarnings("deprecation")
@@ -667,10 +671,6 @@ public class FullMound extends EmptyMound{
                     SwordMound swordMound;
                     SpoonMound spoonMound = null;
                     switch(sword.getTier().toString()){
-                        case "COPPER":
-                            swordMound =
-                                    (SwordMound)ModBlocks.COPPER_SWORD_MOUND.get().getBlock();
-                            break;
                         case "DIAMOND":
                             swordMound =
                                     (SwordMound)ModBlocks.DIAMOND_SWORD_MOUND.get().getBlock();

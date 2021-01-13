@@ -4,8 +4,10 @@ import com.seb.mymod.MyMod;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effect;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -23,10 +25,13 @@ public class Registration {
 
     public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, MyMod.MOD_ID);
-/*
-    public static final DeferredRegister<ContainerType<?>> CONTAINERS =
-            DeferredRegister.create(ForgeRegistries.CONTAINERS, MyMod.MOD_ID);
-*/
+
+    public static final DeferredRegister<Effect> EFFECTS =
+            DeferredRegister.create(ForgeRegistries.POTIONS, MyMod.MOD_ID);
+
+    public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
+            DeferredRegister.create(ForgeRegistries.SOUND_EVENTS,MyMod.MOD_ID);
+
     //This is how we would register something else, whether its a potion or
     //a sound or something
     /*public static final DeferredRegister<> WHATEVER =
@@ -40,7 +45,8 @@ public class Registration {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ITEMS.register(eventBus);
         BLOCKS.register(eventBus);
+        EFFECTS.register(eventBus);
         TILE_ENTITY_TYPES.register(eventBus);
-        /*CONTAINERS.register(eventBus);*/
+        SOUND_EVENTS.register(eventBus);
     }
 }
